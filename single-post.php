@@ -61,7 +61,9 @@
 
 	            <p><?php echo $singlePost['body'] ?></p>
 	        </div>
-
+	        <div class="container">
+  				<button id= buton type="button" class="btn btn-default" onclick=toogleButon()>hide comments</button>
+			</div>
 	        
 
              <?php
@@ -74,7 +76,7 @@
                 }
             ?>
 
-			<ul>
+			<ul id ="comments">
             <?php 
             foreach ($comments as $comment)
    											{          
@@ -111,6 +113,24 @@
 <?php
     include("footer.php");
 ?>
+<script>
+	function toogleButon() {
+		var buton = document.getElementById("buton");
+		var comments = document.getElementById("comments");
+		if (comments.classList.contains("hiden"))
+		 {
+			comments.classList.remove("hiden");
+			buton.innerHTML="Hide comments";
+		}else{
+			comments.classList.add("hiden");
+			buton.innerHTML="Show comments";
+		}
+		
+	}
+
+
+
+</script>
 </body>
 </html>
 

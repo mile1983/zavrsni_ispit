@@ -20,3 +20,6 @@ a > h1 ,a > h2{
         text-decoration: underline;
         
 }
+.hiden {
+    display:none;
+}
