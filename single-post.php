@@ -56,12 +56,17 @@
             ?>
 
             <div class="blog-post">
-	            <h2 class="blog-post-title"><?php echo($singlePost['title']) ?></h2>
-	            <p class="blog-post-meta"><?php echo $singlePost['created_at'] . ' by ' . $singlePost['author']?> </p>
+                <a href = ""<h2 class="blog-post-title"><?php echo($singlePost['title']) ?></h2></a>
+                <p class="blog-post-meta"><?php echo $singlePost['created_at'] . ' by ' . $singlePost['author']?> </p>
 
-	            <p><?php echo $singlePost['body'] ?></p>
+                <p><?php echo $singlePost['body'] ?></p>
 
-	        <form action="create-comment.php" method="post">
+
+                <?php if(isset($_GET['error'])){
+                echo "<h2>Sva polja su obavezna</h2>" ;}
+                ?>
+
+            <form action="create-comment.php" method="post">
                 <label>Your name</label>
                 <input type="Text" name="author"  ><br>
                 <textarea name="text" rows='5' cols='28' placeholder="Comment"></textarea><br>
@@ -72,11 +77,11 @@
             </form>
 
 
-	        </div>
-	        <div class="container">
-  				<button id= buton type="button" class="btn btn-default" onclick=toogleButon()>hide comments</button>
-			</div>
-	        
+            </div>
+            <div class="container">
+                <button id= buton type="button" class="btn btn-default" onclick=toogleButon()>hide comments</button>
+            </div>
+            
 
              <?php
                 if (isset($_GET['post_id'])) {
@@ -88,15 +93,15 @@
                 }
             ?>
 
-			<ul id ="comments">
+            <ul id ="comments">
             <?php 
             foreach ($comments as $comment)
-   											{          
+                                            {          
     ?>
-            	<li><p><?php
-            	echo $comment["author"]
-            	?>
-            	</p><?php echo $comment["text"]?></li><hr>
+                <li><p><?php
+                echo $comment["author"]
+                ?>
+                </p><?php echo $comment["text"]?></li><hr>
                 
 
 
@@ -104,7 +109,7 @@
 }
 ?>
 
-			</ul>
+            </ul>
 
 
             <nav class="blog-pagination">
@@ -126,25 +131,19 @@
     include("footer.php");
 ?>
 <script>
-	function toogleButon() {
-		var buton = document.getElementById("buton");
-		var comments = document.getElementById("comments");
-		if (comments.classList.contains("hiden"))
-		 {
-			comments.classList.remove("hiden");
-			buton.innerHTML="Hide comments";
-		}else{
-			comments.classList.add("hiden");
-			buton.innerHTML="Show comments";
-		}
-		
-	}
-
-
-
+    function toogleButon() {
+        var buton = document.getElementById("buton");
+        var comments = document.getElementById("comments");
+        if (comments.classList.contains("hiden"))
+         {
+            comments.classList.remove("hiden");
+            buton.innerHTML="Hide comments";
+        }else{
+            comments.classList.add("hiden");
+            buton.innerHTML="Show comments";
+        }
+        
+    }
 </script>
 </body>
 </html>
-
-   
-
