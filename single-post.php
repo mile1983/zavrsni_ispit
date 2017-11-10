@@ -102,6 +102,11 @@
                 echo $comment["author"]
                 ?>
                 </p><?php echo $comment["text"]?></li><hr>
+                <form class="deleteComm" method="post" action='delete-comments.php'>
+                            <input type="submit" name="delete" value="Delete">
+                            <input type="hidden" name="id" value="<?php echo $comment['id'] ?>">
+                            <input type="hidden" name="post_id" value="<?php echo $_GET['post_id'] ?>">
+                        </form>
                 
 
 

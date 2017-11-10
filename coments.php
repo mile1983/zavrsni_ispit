@@ -52,6 +52,7 @@
                     $statement->execute();
                     $statement->setFetchMode(PDO::FETCH_ASSOC);
                     $singlePost = $statement->fetch();
+                }
             ?>
 
             <div class="blog-post">
