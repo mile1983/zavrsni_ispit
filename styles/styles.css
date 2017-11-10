@@ -23,3 +23,7 @@ a > h1 ,a > h2{
 .hiden {
     display:none;
 }
+sidebar {
+    text-align-last: 
+    text-align: left;
+}

@@ -60,6 +60,18 @@
 	            <p class="blog-post-meta"><?php echo $singlePost['created_at'] . ' by ' . $singlePost['author']?> </p>
 
 	            <p><?php echo $singlePost['body'] ?></p>
+
+	        <form action="create-comment.php" method="post">
+                <label>Your name</label>
+                <input type="Text" name="author"  ><br>
+                <textarea name="text" rows='5' cols='28' placeholder="Comment"></textarea><br>
+
+               <button type="Submit">Send</button><br>
+                <input type="Hidden" name="post_id" value=" <?php echo ($_GET['post_id']); ?>">
+                <!-- <input type="Text" name="Text"><br> -->
+            </form>
+
+
 	        </div>
 	        <div class="container">
   				<button id= buton type="button" class="btn btn-default" onclick=toogleButon()>hide comments</button>

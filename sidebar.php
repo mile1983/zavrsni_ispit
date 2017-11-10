@@ -11,8 +11,8 @@
         foreach ($latestPosts as $lastPost) {
       ?>
       <h6>
-        <a href="single-post.php?post_id = <?php echo ($lastPost['id']); ?> "> 
-          <?php echo $lastPost['title'] ?>
+        <a href="single-post.php?post_id=<?php echo ($lastPost['id']); ?> "> 
+          <?php echo $lastPost['title']?>
         </a>
       </h6>
 
